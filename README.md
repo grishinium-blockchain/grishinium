@@ -1,32 +1,19 @@
-## BNB Smart Chain
+## Grishinium Blockchain
 
-The goal of BNB Smart Chain is to bring programmability and interoperability to BNB Beacon Chain. In order to embrace the existing popular community and advanced technology, it will bring huge benefits by staying compatible with all the existing smart contracts on Ethereum and Ethereum tooling. And to achieve that, the easiest solution is to develop based on go-ethereum fork, as we respect the great work of Ethereum very much.
+Grishinium Blockchain starts its development based on go-ethereum fork. So you may see many toolings, binaries and also docs are based on Ethereum ones, such as the name "geth".
 
-BNB Smart Chain starts its development based on go-ethereum fork. So you may see many toolings, binaries and also docs are based on Ethereum ones, such as the name "geth".
-
-[![API Reference](
-https://pkg.go.dev/badge/github.com/ethereum/go-ethereum
-)](https://pkg.go.dev/github.com/ethereum/go-ethereum?tab=doc)
-[![Build Test](https://github.com/bnb-chain/bsc/actions/workflows/build-test.yml/badge.svg)](https://github.com/bnb-chain/bsc/actions)
-[![Discord](https://img.shields.io/badge/discord-join%20chat-blue.svg)](https://discord.gg/z2VpC455eU)
-
-But from that baseline of EVM compatible, BNB Smart Chain introduces a system of 21 validators with Proof of Staked Authority (PoSA) consensus that can support short block time and lower fees. The most bonded validator candidates of staking will become validators and produce blocks. The double-sign detection and other slashing logic guarantee security, stability, and chain finality.
-
-**The BNB Smart Chain** will be:
+**The Grishinium Blockchain** will be:
 
 - **A self-sovereign blockchain**: Provides security and safety with elected validators.
 - **EVM-compatible**: Supports all the existing Ethereum tooling along with faster finality and cheaper transaction fees.
-- **Distributed with on-chain governance**: Proof of Staked Authority brings in decentralization and community participants. As the native token, BNB will serve as both the gas of smart contract execution and tokens for staking.
-
-More details in [White Paper](https://github.com/bnb-chain/whitepaper/blob/master/WHITEPAPER.md).
+- **Distributed with on-chain governance**: Proof of Staked Authority brings in decentralization and community participants. As the native token, GRSH will serve as both the gas of smart contract execution and tokens for staking.
 
 ## Release Types
 There are three types of release, each with a clear purpose and version scheme:
 
-- **1.Stable Release**: production-ready builds for the vast majority of users.  Format: `v<Major>.<Minor>.<Patch>`, example: [v1.5.19](https://github.com/bnb-chain/bsc/releases/tag/v1.5.19).
-- **2.Feature Release**: early access to a single feature without affecting the core product. Format: `v<Major>.<Minor>.<Patch>-feature-<FeatureName>`, example: [v1.5.19-feature-SI](https://github.com/bnb-chain/bsc/releases/tag/v1.5.19-feature-SI).
-- **3.Preview Release**: bleeding-edge builds for users who want the latest code. Format: `v<Major>.<Minor>.<Patch>-<Meta>`, Meta values indicate maturity: alpha (experimental), beta (largely complete), rc (release candidate), example: [v1.5.0-alpha](https://github.com/bnb-chain/bsc/releases/tag/v1.5.0-alpha).
-
+- **1.Stable Release**: production-ready builds for the vast majority of users.  Format: `v<Major>.<Minor>.<Patch>`
+- **2.Feature Release**: early access to a single feature without affecting the core product. Format: `v<Major>.<Minor>.<Patch>-feature-<FeatureName>`
+- **3.Preview Release**: bleeding-edge builds for users who want the latest code. Format: `v<Major>.<Minor>.<Patch>-<Meta>`, Meta values indicate maturity: alpha (experimental), beta (largely complete), rc (release candidate)
 ## Key features
 
 ### Proof of Staked Authority 
@@ -37,19 +24,19 @@ Meanwhile, the PoA protocol is most criticized for being not as decentralized as
 
 Other blockchains, such as EOS and Cosmos both, introduce different types of Deputy Proof of Stake (DPoS) to allow the token holders to vote and elect the validator set. It increases the decentralization and favors community governance. 
 
-To combine DPoS and PoA for consensus, BNB Smart Chain implement a novel consensus engine called Parlia that:
+To combine DPoS and PoA for consensus, Grishinium implement a novel consensus engine called Parlia that:
 
 1. Blocks are produced by a limited set of validators.
 2. Validators take turns to produce blocks in a PoA manner, similar to Ethereum's Clique consensus engine.
-3. Validator set are elected in and out based on a staking based governance on BNB Smart Chain.
-4. Parlia consensus engine will interact with a set of [system contracts](https://docs.bnbchain.org/bnb-smart-chain/staking/overview/#system-contracts) to achieve liveness slash, revenue distributing and validator set renewing func.
+3. Validator set are elected in and out based on a staking based governance on Grishinium.
+4. Parlia consensus engine will interact with a set of system contracts to achieve liveness slash, revenue distributing and validator set renewing func.
 
 ## Native Token
 
-BNB will run on BNB Smart Chain in the same way as ETH runs on Ethereum so that it remains as `native token` for BSC. This means,
-BNB will be used to:
+GRSH will run on Grishinium blockchain in the same way as ETH runs on Ethereum so that it remains as `native token` for Grishinium. This means,
+GRSH will be used to:
 
-1. pay `gas` to deploy or invoke Smart Contract on BSC
+1. pay `gas` to deploy or invoke Smart Contract on Grishinium
 
 ## Building the source
 
@@ -87,7 +74,7 @@ directory.
 
 |  Command   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | :--------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`geth`** | Main BNB Smart Chain client binary. It is the entry point into the BSC network (main-, test- or private net), capable of running as a full node (default), archive node (retaining all historical state) or a light node (retrieving data live). It has the same and more RPC and other interface as go-ethereum and can be used by other processes as a gateway into the BSC network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `geth --help` and the [CLI page](https://geth.ethereum.org/docs/interface/command-line-options) for command line options. |
+| **`geth`** | Main Grishinium blockchain's client binary. It is the entry point into the Grishinium network (main-, test- or private net), capable of running as a full node (default), archive node (retaining all historical state) or a light node (retrieving data live). It has the same and more RPC and other interface as go-ethereum and can be used by other processes as a gateway into the Grishinium network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `geth --help` and the [CLI page](https://geth.ethereum.org/docs/interface/command-line-options) for command line options. |
 |   `clef`   | Stand-alone signing tool, which can be used as a backend signer for `geth`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |  `devp2p`  | Utilities to interact with nodes on the networking layer, without running a full blockchain.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |  `abigen`  | Source code generator to convert Ethereum contract definitions into easy to use, compile-time type-safe Go packages. It operates on plain [Ethereum contract ABIs](https://docs.soliditylang.org/en/develop/abi-spec.html) with expanded functionality if the contract bytecode is also available. However, it also accepts Solidity source files, making development much more streamlined. Please see our [Native DApps](https://geth.ethereum.org/docs/dapp/native-bindings) page for details.                                                                                               |
@@ -106,7 +93,7 @@ on how you can run your own `geth` instance.
 
 The hardware must meet certain requirements to run a full node on mainnet:
 - VPS running recent versions of Mac OS X, Linux, or Windows.
-- IMPORTANT 3 TB(Dec 2023) of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms. (if node is started with snap sync, it will need NVMe SSD)
+- IMPORTANT 3 TB(Sep2025) of free disk space, solid-state drive(SSD), gp3, 8k IOPS, 500 MB/S throughput, read latency <1ms. (if node is started with snap sync, it will need NVMe SSD)
 - 16 cores of CPU and 64 GB of memory (RAM)
 - Suggest m5zn.6xlarge or r7iz.4xlarge instance type on AWS, c2-standard-16 on Google cloud.
 - A broadband Internet connection with upload/download speeds of 5 MB/S
@@ -116,34 +103,6 @@ The requirement for testnet:
 - 500G of storage for testnet.
 - 4 cores of CPU and 16 gigabytes of memory (RAM).
 
-### Steps to Run a Fullnode
-
-#### 1. Download the pre-build binaries
-```shell
-# Linux
-wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_linux |cut -d\" -f4)
-mv geth_linux geth
-chmod -v u+x geth
-
-# MacOS
-wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep geth_mac |cut -d\" -f4)
-mv geth_macos geth
-chmod -v u+x geth
-```
-
-#### 2. Download the config files
-```shell
-//== mainnet
-wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep mainnet |cut -d\" -f4)
-unzip mainnet.zip
-
-//== testnet
-wget $(curl -s https://api.github.com/repos/bnb-chain/bsc/releases/latest |grep browser_ |grep testnet |cut -d\" -f4)
-unzip testnet.zip
-```
-
-#### 3. Download snapshot
-Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-snapshots). Follow the guide to structure your files.
 
 #### 4. Start a full node
 ```shell
@@ -156,7 +115,7 @@ Download latest chaindata snapshot from [here](https://github.com/bnb-chain/bsc-
 
 #### 5. Monitor node status
 
-Monitor the log from **./node/bsc.log** by default. When the node has started syncing, should be able to see the following output:
+Monitor the log from **log** by default. When the node has started syncing, should be able to see the following output:
 ```shell
 t=2022-09-08T13:00:27+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=177   mgas=17.317   elapsed=31.131ms    mgasps=556.259  number=21,153,429 hash=0x42e6b54ba7106387f0650defc62c9ace3160b427702dab7bd1c5abb83a32d8db dirty="0.00 B"
 t=2022-09-08T13:00:29+0000 lvl=info msg="Imported new chain segment"             blocks=1    txs=251   mgas=39.638   elapsed=68.827ms    mgasps=575.900  number=21,153,430 hash=0xa3397b273b31b013e43487689782f20c03f47525b4cd4107c1715af45a88796e dirty="0.00 B"
@@ -171,15 +130,6 @@ as well as `geth`'s own [management APIs](https://geth.ethereum.org/docs/rpc/ser
 This tool is optional and if you leave it out you can always attach to an already running
 `geth` instance with `geth attach`.
 
-#### 7. More
-
-More details about [running a node](https://docs.bnbchain.org/bnb-smart-chain/developers/node_operators/full_node/) and [becoming a validator](https://docs.bnbchain.org/bnb-smart-chain/validator/create-val/)
-
-*Note: Although some internal protective measures prevent transactions from
-crossing over between the main network and test network, you should always
-use separate accounts for play and real money. Unless you manually move
-accounts, `geth` will by default correctly separate the two networks and will not make any
-accounts available between them.*
 
 ### Configuration
 
@@ -237,8 +187,6 @@ BSC nodes with exposed APIs! Further, all browser tabs can access locally
 running web servers, so malicious web pages could try to subvert locally available
 APIs!**
 
-### Operating a private network
-- [BSC-Deploy](https://github.com/bnb-chain/node-deploy/): deploy tool for setting up BNB Smart Chain.
 
 ## Running a bootnode
 
